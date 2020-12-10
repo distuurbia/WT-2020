@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <servlet-name>profile</servlet-name>
+        <servlet-class>epam.webtech.web.UserProfilePageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>profile</servlet-name>
+        <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>login</servlet-name>
+        <servlet-class>epam.webtech.web.LoginPageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/registration</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>makeBet</servlet-name>
+        <servlet-class>epam.webtech.web.MakeBetPageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>makeBet</servlet-name>
+        <url-pattern>/makebet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>races</servlet-name>
+        <servlet-class>epam.webtech.web.MainPageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>races</servlet-name>
+        <url-pattern>/races</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>races</servlet-name>
+        <url-pattern>/races/finish</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>addRace</servlet-name>
+        <servlet-class>epam.webtech.web.AddRacePageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addRace</servlet-name>
+        <url-pattern>/addrace</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addRace</servlet-name>
+        <url-pattern>/races/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>startRace</servlet-name>
+        <servlet-class>epam.webtech.web.StartRaceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>startRace</servlet-name>
+        <url-pattern>/races/start</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>epam.webtech.web.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>language</servlet-name>
+        <servlet-class>epam.webtech.web.LanguageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>language</servlet-name>
+        <url-pattern>/lng</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>defaultFilter</filter-name>
+        <filter-class>epam.webtech.web.filters.DefaultFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>defaultFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/pages/notFoundErrorPage.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>epam.webtech.exceptions.InternalException</exception-type>
+        <location>/WEB-INF/pages/internalErrorPage.jsp</location>
+    </error-page>
+
+</web-app>
